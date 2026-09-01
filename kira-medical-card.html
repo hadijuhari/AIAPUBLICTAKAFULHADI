@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medical Card | Hadi Juhari</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#101828;background:#fff;overflow-x:hidden}
+:root{--navy:#ffffff;--red:#d7193f;--light:#fff5f7;--muted:#667085}
+.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:#ffffff;color:#101828;border-bottom:1px solid #f1d4da;backdrop-filter:blur(10px)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:900;line-height:1}.logo span{color:#ed234c}
+.logo small{display:block;font-size:8px;letter-spacing:1px;opacity:.75;margin-top:4px}
+.links{display:flex;gap:24px;font-size:14px}.links a{color:#101828;text-decoration:none}
+.btn{display:inline-block;padding:14px 22px;border-radius:9px;text-decoration:none;font-weight:800;cursor:pointer;border:0}
+.red{background:var(--red);color:#fff}.dark{background:var(--navy);color:#fff}
+.hero{background:linear-gradient(135deg,#fff5f7,#ffffff);color:#101828;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:#d7193f12;filter:blur(10px);right:-180px;top:-180px}
+.hero-grid{min-height:520px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:45px;position:relative}
+.badge{display:inline-block;color:#ff7189;font-weight:900;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
+h1{font-size:clamp(42px,5vw,66px);line-height:1.03;letter-spacing:-2px;margin:12px 0 20px}
+h1 span{color:#ed234c}
+.hero p{font-size:18px;line-height:1.65;color:#667085;max-width:650px}
+.points{display:flex;gap:20px;flex-wrap:wrap;margin:25px 0}
+.point{border-left:2px solid var(--red);padding-left:10px;font-size:13px;color:#475467}
+.hero-card{background:#ffffff;border:1px solid #f0c7cf;border-radius:20px;padding:30px;box-shadow:0 20px 50px #d7193f14}
+.hero-card .big{font-size:44px;font-weight:900;line-height:1.1;color:#d7193f}.hero-card p{font-size:14px;margin:12px 0 0;color:#667085}
+.section{padding:78px 0}.alt{background:var(--light)}.center{text-align:center}
+.eyebrow{color:var(--red);font-size:13px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+h2{font-size:38px;letter-spacing:-1px;margin:8px 0 12px}
+.intro{color:var(--muted);max-width:730px;margin:auto;line-height:1.6}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.benefit{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:28px;box-shadow:0 10px 30px #1018280b;transition:.25s}
+.benefit:hover{transform:translateY(-5px);box-shadow:0 18px 40px #10182812;border-color:#f0b8c3}
+.icon{width:58px;height:58px;display:grid;place-items:center;border-radius:15px;background:#fff1f4;font-size:30px}
+.benefit h3{margin:15px 0 8px}.benefit p{color:var(--muted);line-height:1.6;font-size:14px}
+.features{max-width:900px;margin:35px auto 0;background:#fff;border-radius:20px;padding:32px;box-shadow:0 18px 50px #07182d1a}
+.feature-row{display:grid;grid-template-columns:90px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #e5e7eb;align-items:center}
+.feature-row:last-child{border-bottom:0}
+.feature-number{font-size:28px;font-weight:900;color:var(--red)}
+.feature-row h3{margin:0 0 6px}.feature-row p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
+.faq{max-width:850px;margin:30px auto}details{border-bottom:1px solid #e5e7eb;padding:18px 0}
+summary{font-weight:800;cursor:pointer}details p{color:#667085;line-height:1.6;margin:12px 0 0}
+.cta{background:linear-gradient(90deg,#b50e30,#e3264e);color:#fff;padding:52px 0}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:20px}.cta h2{margin:0;color:#fff}
+footer{background:#fff;color:#475467;padding:35px 0;border-top:1px solid #f1d4da}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.small{font-size:12px;color:#667085}
+.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#19b95a;color:#101828;text-decoration:none;font-size:27px;box-shadow:0 12px 28px #0003}
+@media(max-width:850px){
+ .links{display:none}.hero-grid{grid-template-columns:1fr;min-height:auto;padding:65px 0 55px}
+ .benefits{grid-template-columns:1fr 1fr}.cta-in{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){
+ .benefits{grid-template-columns:1fr}.section{padding:58px 0}h2{font-size:30px}h1{font-size:43px}
+ .feature-row{grid-template-columns:1fr;gap:8px}.whatsapp{width:54px;height:54px;right:15px;bottom:15px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav">
+  <div class="logo"><span>HADI</span> JUHARI<small>AIA PUBLIC TAKAFUL ADVISOR</small></div>
+  <div class="links">
+    <a href="index.html">Home</a>
+    <a href="#kenapa">Kenapa Medical Card</a>
+    <a href="#manfaat">Manfaat</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a class="btn red" href="https://wa.me/601114286175?text=Hi%20Hadi%2C%20saya%20nak%20consultation%20Medical%20Card." target="_blank">WhatsApp Saya</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container hero-grid">
+  <div>
+    <div class="badge">Medical Card • Personal Consultation</div>
+    <h1>Medical Card untuk lindungi anda daripada <span>kos rawatan.</span></h1>
+    <p>Medical Card membantu menyediakan perlindungan untuk kos rawatan dan kemasukan hospital, mengikut pelan dan terma sijil yang dipilih.</p>
+    <div class="points">
+      <div class="point">Consultation Percuma</div>
+      <div class="point">Ikut Keperluan & Bajet</div>
+      <div class="point">Penerangan Mudah</div>
+    </div>
+    <a class="btn red" href="#manfaat">Lihat Manfaat →</a>
+  </div>
+  <div class="hero-card">
+    <div class="badge">Medical Protection</div>
+    <div class="big">Rawatan • Hospital • Kesihatan</div>
+    <p>Semak pilihan perlindungan yang sesuai dengan umur, keperluan kesihatan dan kemampuan caruman anda.</p>
+  </div>
+</div>
+</section>
+
+<section class="section" id="kenapa">
+<div class="container">
+  <div class="center">
+    <div class="eyebrow">Kenapa Medical Card?</div>
+    <h2>Kos rawatan boleh datang tanpa dijangka</h2>
+    <p class="intro">Medical Card direka untuk membantu mengurus risiko kos rawatan dan kemasukan hospital supaya anda boleh fokus kepada proses pemulihan.</p>
+  </div>
+  <div class="benefits">
+    <div class="benefit"><div class="icon">🏥</div><h3>Kos Kemasukan Hospital</h3><p>Perlindungan terhadap kos yang layak berkaitan rawatan dan kemasukan hospital, tertakluk kepada pelan dan terma sijil.</p></div>
+    <div class="benefit"><div class="icon">💳</div><h3>Ikut Bajet Anda</h3><p>Pilihan perlindungan boleh dibincangkan berdasarkan kemampuan caruman dan keperluan anda.</p></div>
+    <div class="benefit"><div class="icon">🤝</div><h3>Personal Consultation</h3><p>Saya bantu terangkan manfaat, had, terma dan perkara penting sebelum anda membuat keputusan.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section alt" id="manfaat">
+<div class="container">
+  <div class="center">
+    <div class="eyebrow">Apa yang perlu dilihat</div>
+    <h2>Bukan sekadar tengok harga bulanan</h2>
+    <p class="intro">Medical Card perlu dilihat secara menyeluruh. Saya akan bantu anda faham perkara penting dalam pelan sebelum membuat pilihan.</p>
+  </div>
+  <div class="features">
+    <div class="feature-row"><div class="feature-number">01</div><div><h3>Annual Limit</h3><p>Semak had perlindungan tahunan dan pastikan ia sesuai dengan keperluan anda.</p></div></div>
+    <div class="feature-row"><div class="feature-number">02</div><div><h3>Room & Board</h3><p>Fahami kelayakan bilik dan penginapan hospital yang disediakan oleh pelan.</p></div></div>
+    <div class="feature-row"><div class="feature-number">03</div><div><h3>Deductible & Co-payment</h3><p>Ketahui sama ada terdapat jumlah yang perlu ditanggung sendiri apabila menggunakan manfaat tertentu.</p></div></div>
+    <div class="feature-row"><div class="feature-number">04</div><div><h3>Waiting Period & Exclusions</h3><p>Fahami tempoh menunggu, pengecualian dan terma penting sebelum sijil digunakan.</p></div></div>
+    <div class="feature-row"><div class="feature-number">05</div><div><h3>Panel Hospital</h3><p>Semak kemudahan panel dan proses kemasukan berdasarkan terma pelan yang dipilih.</p></div></div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="center">
+    <div class="eyebrow">Cara saya bantu</div>
+    <h2>3 langkah sebelum pilih Medical Card</h2>
+  </div>
+  <div class="benefits">
+    <div class="benefit"><div class="icon">01</div><h3>Kenal pasti keperluan</h3><p>Kita tengok umur, keadaan keluarga, bajet dan keutamaan perlindungan.</p></div>
+    <div class="benefit"><div class="icon">02</div><h3>Faham manfaat</h3><p>Saya terangkan manfaat utama serta perkara yang perlu diberi perhatian.</p></div>
+    <div class="benefit"><div class="icon">03</div><h3>Dapatkan quotation</h3><p>Selepas jelas dengan pilihan, barulah kita semak quotation yang sesuai.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section alt" id="faq">
+<div class="container">
+  <div class="center"><div class="eyebrow">FAQ</div><h2>Soalan Lazim</h2></div>
+  <div class="faq">
+    <details><summary>Adakah Medical Card cover semua jenis rawatan?</summary><p>Tidak semestinya. Perlindungan bergantung pada manfaat, had, pengecualian dan terma sijil yang dipilih.</p></details>
+    <details><summary>Kenapa perlu tengok annual limit?</summary><p>Annual limit menunjukkan had maksimum manfaat yang tersedia dalam tempoh setahun, tertakluk kepada terma pelan.</p></details>
+    <details><summary>Adakah Medical Card ada deductible atau co-payment?</summary><p>Sesetengah pelan mempunyai struktur deductible atau co-payment. Perkara ini perlu disemak berdasarkan pelan dan terma semasa.</p></details>
+    <details><summary>Boleh saya minta quotation?</summary><p>Boleh. Hubungi saya dan saya akan bantu semak pilihan berdasarkan keperluan dan bajet anda.</p></details>
+  </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container cta-in">
+  <h2>Nak semak Medical Card yang sesuai?</h2>
+  <a class="btn" style="background:#fff;color:#b50e30" href="https://wa.me/601114286175?text=Hi%20Hadi%2C%20saya%20nak%20semak%20Medical%20Card." target="_blank">WhatsApp Hadi Sekarang →</a>
+</div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/601114286175?text=Hi%20Hadi%2C%20saya%20nak%20consultation%20Medical%20Card." target="_blank" aria-label="WhatsApp Hadi">◉</a>
+
+<footer>
+<div class="container foot">
+  <div><b>HADI JUHARI</b><div class="small">AIA Public Takaful Advisor</div></div>
+  <div class="small">WhatsApp: 011-14286175 • Putrajaya & KL</div>
+  <div class="small"><a href="index.html" style="color:#475467">← Kembali ke website utama</a></div>
+</div>
+</footer>
+
+</body>
+</html>
